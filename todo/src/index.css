@@ -1,0 +1,35 @@
+.todos {
+  width: 500px;
+  margin: 50px auto;
+}
+.inputContainer {
+  display: flex;
+  gap: 10px;
+}
+.inputContainer input {
+  width: 80%;
+  height: 50px;
+}
+.inputContainer button {
+  width: 100px;
+  font-size: 20px;
+}
+.todoList {
+  width: 100%;
+  text-align: center;
+}
+.todoList .todoitem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todoList .todoitem input {
+  width: 30px;
+}
+.todoList .todoitem button {
+  width: 30px;
+  height: 30px;
+}
+.todoList .todoitem p {
+  font-size: 20px;
+}
