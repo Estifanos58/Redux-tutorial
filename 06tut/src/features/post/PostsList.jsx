@@ -1,8 +1,7 @@
-import { useSelector} from 'react-redux'
-import { selectPostIds } from './postsSlice'
-import PostsExcerpt from './PostsExcerpt'
-import { useGetPostsQuery } from './postsSlice'
-
+import { useSelector } from "react-redux";
+import { selectPostIds } from "./postsSlice";
+import PostsExcerpt from "./PostsExcerpt";
+import { useGetPostsQuery } from './postsSlice';
 
 const PostsList = () => {
     const {
@@ -12,19 +11,21 @@ const PostsList = () => {
         error
     } = useGetPostsQuery()
 
-    const orderedPostsIds = useSelector(selectPostIds)
+    const orderedPostIds = useSelector(selectPostIds)
 
     let content;
-    if (isLoading){
-        content = <p>"Loading..."</p>
-    }else if (isSuccess){
-        content = orderedPostsIds.map(post => <PostsExcerpt key={post.id} post={post}/>)
-    }else if (isError){
-        content = <p>{error}</p>
+    if (isLoading) {
+        content = <p>"Loading..."</p>;
+    } else if (isSuccess) {
+        content = orderedPostIds.map(postId => <PostsExcerpt key={postId} postId={postId} />)
+    } else if (isError) {
+        content = <p>{error}</p>;
     }
-    return <section>
-        {content}
-    </section>
-}
 
+    return (
+        <section>
+            {content}
+        </section>
+    )
+}
 export default PostsList
