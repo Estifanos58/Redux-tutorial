@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectUserById } from "./usersSlice";
 import { Link, useParams} from 'react-router-dom'
-import { useGetPostsQuery } from '../post/postsSlice'
+import { useGetPostsByUserIdQuery } from '../post/postsSlice'
 
 const UserPage = () =>{
     const { userId } = useParams()
@@ -13,7 +13,7 @@ const UserPage = () =>{
         isSuccess,
         isError,
         error
-    } = useGetPostsQuery(userId)
+    } = useGetPostsByUserIdQuery(userId)
  
     let content
     if(isLoading){
